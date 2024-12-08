@@ -14,6 +14,7 @@ origins = [
     "http://localhost",
     "http://127.0.0.1",
     "http://localhost:80/*",
+    "https://trucks-tracking-386480988510.us-central1.run.app/*",
 ]
 
 app.add_middleware(

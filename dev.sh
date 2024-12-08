@@ -6,7 +6,7 @@ function run_api {
     uv venv --python 3.11
     uv sync
     source ./.venv/bin/activate
-    fastapi dev main.py --port 80
+    fastapi dev main.py --port 8000
 }
 
 function run_frontend {

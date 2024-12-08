@@ -19,10 +19,9 @@ export default function App() {
 
   const handleSearch = async () => {
     try {
-      const response = await axios.get(`http://localhost:80/api/carriers/${fromCity.split(',')[0].toLocaleLowerCase()}/${toCity.split(',')[0].toLocaleLowerCase()}`);
+      const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/carriers/${fromCity.split(',')[0].toLocaleLowerCase()}/${toCity.split(',')[0].toLocaleLowerCase()}`);
       setCarriers(response.data.carriers);
       setSearchTriggered(true);
-      console.log(response.data);
     } catch (error) {
       console.error(error);
     }
