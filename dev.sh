@@ -3,13 +3,15 @@ function main() {
 }
 
 function run_api {
-    pushd ./api
+    uv venv --python 3.11
+    uv sync
     source ./.venv/bin/activate
-    fastapi dev main.py
+    fastapi dev main.py --port 80
 }
 
 function run_frontend {
     pushd ./frontend
+    yarn install
     yarn start
 }
 
