@@ -1,0 +1,19 @@
+services:
+  fastapi:
+    container_name: fastapi
+    restart: always
+    build: ./api
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./api:/usr/src/app/api
+  frontend:
+    container_name: frontend
+    restart: always
+    build: ./frontend
+    expose:
+      - 80
+    ports:
+      - "80:80"
+    volumes:
+      - ./frontend:/usr/src/app/frontend
